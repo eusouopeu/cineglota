@@ -9,7 +9,6 @@ import espanhol from '@/assets/espanhol.svg';
 import italiano from '@/assets/italiano.svg';
 import frances from '@/assets/frances.svg';
 import alemao from '@/assets/alemao.svg';
-import { TMDB_DE, TMDB_ES, TMDB_FR, TMDB_IT } from '@/services/api';
 
 export default function Idiomas() {
   const { filterIdioma } = useFiltro();
@@ -17,7 +16,7 @@ export default function Idiomas() {
   return (
     <form id='movie-language'>
 
-        <input id='spanish' name='language' value={TMDB_ES} type="radio" defaultChecked onClick={() => filterIdioma(TMDB_ES)} />
+        <input id='spanish' name='language' value='es' type="radio" defaultChecked onClick={filterIdioma} />
         <label htmlFor='spanish' className="spanish">
           <h2>Espanhol</h2>
           <span>
@@ -25,7 +24,7 @@ export default function Idiomas() {
           </span>
         </label>
       
-        <input id='italian' name='language' value={TMDB_IT} type="radio" onClick={() => filterIdioma(TMDB_IT)}/>
+        <input id='italian' name='language' value='it' type="radio" onClick={filterIdioma}/>
         <label htmlFor='italian' className="italian">
           <h2>Italiano</h2>
           <span>
@@ -33,7 +32,7 @@ export default function Idiomas() {
           </span>
         </label>
 
-        <input id='french' name='language' value={TMDB_FR} type="radio" onClick={ () => filterIdioma(TMDB_FR) }/>
+        <input id='french' name='language' value='fr' type="radio" onClick={filterIdioma}/>
         <label htmlFor='french' className="french">
           <h2>Francês</h2>
           <span>
@@ -41,7 +40,7 @@ export default function Idiomas() {
           </span>
         </label>   
 
-        <input id='german' name='language' value={TMDB_DE} type="radio" onClick={() => filterIdioma(TMDB_DE) }/>
+        <input id='german' name='language' value='de' type="radio" onClick={filterIdioma}/>
         <label htmlFor='german' className="german">
           <h2>Alemão</h2>
           <span>

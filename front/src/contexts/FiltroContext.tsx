@@ -5,11 +5,11 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 
 // Definindo o tipo do estado e das funções de controle
 interface FiltroContextType {
-  Idioma: any;
-  Genero: number
-  ListaFilmes: any[]
-  filterIdioma: (e: any) => void;
-  filterGenero: (e: any) => void;
+  Idioma: string;
+  Genero: number;
+  ListaFilmes: any[];
+  filterIdioma: (e: React.FormEvent<HTMLInputElement>) => void;
+  filterGenero: (e: React.FormEvent<HTMLInputElement>) => void;
 }
 
 // Estado inicial
@@ -17,8 +17,8 @@ const initialState: FiltroContextType = {
   Idioma: "en",
   Genero: 28,
   ListaFilmes: [],
-  filterIdioma: (e: any) => {},
-  filterGenero: (e: any) => {}
+  filterIdioma: (e: React.FormEvent<HTMLInputElement>) => {},
+  filterGenero: (e: React.FormEvent<HTMLInputElement>) => {}
 };
 interface FiltroProps {
   children: React.ReactNode;
@@ -33,16 +33,18 @@ export const FiltroProvider: React.FC<FiltroProps> = ({ children }) => {
   const [Genero, setGenero] = useState(28);
   const [ListaFilmes, setListaFilmes] = useState([]);
 
-  const filterIdioma = (e: any) => {
-    setIdioma(e.target.value)
+  const filterIdioma = (e: React.FormEvent<HTMLInputElement>) => {
+    setIdioma(e.currentTarget.value)
   };
-  const filterGenero = (e: any) => {
-    setGenero(e.target.value);
+  const filterGenero = (e: React.FormEvent<HTMLInputElement>) => {
+    setGenero(Number(e.currentTarget.value));
   };
 
   
   useEffect(() => {
     const TMDB_FILTERS = `https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_KEY}`;
+    console.log(Idioma)
+    console.log(Genero)
 
     const filtros = (Idioma: string, Genero: number) => {
       axios.get(`${TMDB_FILTERS}&language=pt-BR&with_genres=${Genero}&with_original_language=${Idioma}`)

@@ -28,17 +28,17 @@
 }
 /*-- INDICADOR IDIOMA --*/
 .indicador-idioma {
-  @apply absolute z-40 top-8 left-[3.5rem] w-20 h-20 bg-gradient-to-tr from-blue-500 to-blue-900 border-8 border-black rounded-full;
+  @apply absolute z-40 top-8 left-[3.5rem] w-20 h-20 bg-gradient-to-tr from-blue-500 to-blue-900 border-8 border-zinc-900 rounded-full;
 }
 .indicador-idioma::before {
   content: '';
   @apply absolute flex top-[-4px] left-[-12px] w-5 h-3 rounded-br-2xl;
-  box-shadow: 2px 3px 0 0 #000;
+  box-shadow: 2px 3px 0 0 rgb(24 24 27);
   }
 .indicador-idioma::after {
   content: '';
   @apply absolute flex top-[-4px] right-[-12px] w-5 h-3 rounded-bl-2xl;
-  box-shadow: -2px 3px 0 0 #000;
+  box-shadow: -2px 3px 0 0 rgb(24 24 27);
 }
 
 /* -- MOVIMENTO INDICADOR IDIOMA -- */

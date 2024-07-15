@@ -36,21 +36,23 @@ export default function Cards({ poster, titulo, genero, idioma, nota }: CdProps)
   }
 
   return (
-    <div className='flex flex-col w-[150px] h-[320px] justify-between p-6 
+    <div className='flex flex-col w-[200px] h-[380px] justify-between p-[12px] 
   bg-gradient-to-bl from-slate-500/30 to-slate-600/10 
-  border-2 border-y-red-600/50 border-x-rose-500/50 backdrop-blur-sm shadow-lg shadow-red-600/20 rounded-3xl'>
+  border-2 border-y-blue-600/50 border-x-blue-500/50 backdrop-blur-sm shadow-lg rounded-lg'>
       <div>
-        <Image src={poster} alt={titulo} width={100} height={100} layout="responsive" className='w-full h-auto bg-cover' />
-        <h2 className='self-center font-bold my-1'>{titulo}</h2>
+        <Image src={poster} alt={titulo} width={100} height={100} layout="responsive" className='w-full h-auto bg-cover rounded-lg' />
+        <div className='flex w-full h-[48px]'>
+          <h2 className='self-center font-bold mt-[4px] truncate overflow-hidden'>{titulo}</h2>
+        </div>
       </div>
 
       <div>
-        <div className='flex justify-between text-xs'>
-          <p>{genero}</p>
+        <div className='flex justify-between'>
+          <p className='text-sm'>{nota?.toFixed(2)}</p>
+          <p className='text-xs'>{genero}</p>
           <Image src={lingua} alt='.' width={20} height={20} />
         </div>
 
-        <p>{nota}</p>
 
         <div className='flex justify-between text-xs'>
           <button>Detalhes</button>

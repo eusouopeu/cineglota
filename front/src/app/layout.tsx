@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from '@/components/Header';
+import Idiomas from '@/components/Idiomas';
+import { FiltroProvider } from '@/contexts/FiltroContext'
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,11 +20,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>
-        <Header/>
-        
-        {children}
-      </body>
+      <FiltroProvider>
+        <body className={inter.className}>
+          <div className="z-50 fixed w-screen h-[4.25rem] bg-zinc-900">
+            <Idiomas/>
+            <Header/>
+          </div>
+          
+          {children}
+        </body>
+      </FiltroProvider>
     </html>
   );
 }

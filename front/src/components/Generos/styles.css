@@ -16,17 +16,17 @@
 }
 /* -- INDICADOR GENERO -- */
 .indicador-genero {
-  @apply absolute z-10 top-[2.4rem] left-[0.8rem] w-[8rem] h-[3rem] bg-gradient-to-br from-blue-500 to-blue-900 border-8 border-black rounded-full;
+  @apply absolute z-10 top-[2.4rem] left-[0.8rem] w-[8rem] h-[3rem] bg-gradient-to-br from-blue-500 to-blue-900 border-8 border-zinc-900 rounded-full;
 }
 .indicador-genero::before {
   content: '';
-  @apply absolute flex top-[-1.8rem] left-[3.5rem] w-5 h-5 rounded-br-2xl;
-  box-shadow: 4px 6px 6px 0 #000;
+  @apply absolute flex top-[-1.8rem] left-[3.6rem] w-5 h-5 rounded-br-2xl;
+  box-shadow: 8px 6px 6px 0 rgb(24 24 27);
   }
 .indicador-genero::after {
   content: '';
-  @apply absolute flex bottom-[-1.8rem] left-[3.4rem] w-5 h-5 rounded-tr-2xl;
-  box-shadow: 4px -6px 6px 0 #000;
+  @apply absolute flex bottom-[-1.8rem] left-[3.6rem] w-5 h-5 rounded-tr-2xl;
+  box-shadow: 4px -8px 4px 0 rgb(24 24 27);
 }
 /* -- MOVIMENTO INDICADOR GENERO -- */
 #adventure:checked ~ .indicador-genero {

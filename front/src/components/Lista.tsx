@@ -6,10 +6,10 @@ import { TMDB_LANGS } from '@/services/api';
 // import SearchBar from '../SearchBar';
 import Cards from './Cards';
 //-- ASSETS
-import es from '../../assets/espanhol.svg';
-import it from '../../assets/italiano.svg';
-import fr from '../../assets/frances.svg';
-import de from '../../assets/alemao.svg';
+import es from '@/assets/espanhol.svg';
+import it from '@/assets/italiano.svg';
+import fr from '@/assets/frances.svg';
+import de from '@/assets/alemao.svg';
 
 import axios from 'axios';
 
@@ -25,10 +25,10 @@ export default function Lista() {
 
   
   return (
-    <section className='flex flex-col gap-4 my-[12rem] pl-[11rem] pr-[6rem]'>
+    <section className='z-10 flex flex-col gap-4'>
       {/* <SearchBar /> */}
 
-      <ul className='flex gap-4'>
+      <ul className='flex flex-wrap w-full gap-4'>
         {ListaFilmes.map((item: any) => {
             return (
               <li key={item.id}>

@@ -6,9 +6,9 @@ import Lista from  '@/components/Lista';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between py-[11rem] pl-[12rem] pr-[2rem]">
 
-      <Idiomas/>
+      
       <Generos/>
 
       <Lista/>

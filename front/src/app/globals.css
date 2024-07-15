@@ -24,7 +24,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  @apply bg-gradient-to-b from-blue-950 to-blue-800;
+  @apply bg-gradient-to-b from-zinc-900 to-zinc-800;
 }
 
 @layer utilities {
